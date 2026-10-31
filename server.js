@@ -6,13 +6,16 @@ import { promisify } from "node:util";
 import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import { extname, join, normalize, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { networkInterfaces } from "node:os";
 
 const scrypt = promisify(scryptCallback);
 const root = fileURLToPath(new URL(".", import.meta.url));
 const dataDirectory = process.env.DATA_DIR ? resolve(process.env.DATA_DIR) : join(root, "data");
 const storePath = join(dataDirectory, "store.json");
 const port = Number(process.env.PORT || 3001);
+const host = process.env.HOST || "0.0.0.0";
 const isProduction = process.env.NODE_ENV === "production" || process.argv.includes("--serve-client");
+const secureCookies = process.env.NODE_ENV === "production";
 const sessionDuration = 7 * 24 * 60 * 60 * 1000;
 const defaultSettings = {
   smartSuggestions: true,
@@ -93,7 +96,7 @@ async function currentUser(request) {
 }
 
 function sessionCookie(token, maxAge) {
-  return `study_session=${encodeURIComponent(token)}; HttpOnly; SameSite=Lax; Path=/; Max-Age=${maxAge}${isProduction ? "; Secure" : ""}`;
+  return `study_session=${encodeURIComponent(token)}; HttpOnly; SameSite=Lax; Path=/; Max-Age=${maxAge}${secureCookies ? "; Secure" : ""}`;
 }
 
 function publicUser(user) {
@@ -346,7 +349,14 @@ const server = createServer(async (request, response) => {
   }
 });
 
-server.listen(port, () => {
-  console.log(`Study assistant API listening at http://localhost:${port}`);
+server.listen(port, host, () => {
+  console.log(`Study assistant listening at http://localhost:${port}`);
+  for (const addresses of Object.values(networkInterfaces())) {
+    for (const address of addresses || []) {
+      if (address.family === "IPv4" && !address.internal) {
+        console.log(`Network access: http://${address.address}:${port}`);
+      }
+    }
+  }
   console.log(`AI provider: ${process.env.OPENAI_API_KEY ? "configured" : "local notes mode"}`);
 });

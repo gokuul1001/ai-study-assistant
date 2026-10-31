@@ -2,7 +2,7 @@
 
 :root {
   font-family: "DM Sans", "Segoe UI", sans-serif;
-  color: #f2effa;
+  color: #f5f0f0;
   background: #09080e;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,6 +19,6 @@ body { min-width: 320px; min-height: 100vh; margin: 0; }
 body, button, input, textarea, select { font-family: "DM Sans", "Segoe UI", sans-serif; }
 button, input, textarea, select { font-size: inherit; }
 button { color: inherit; }
-button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid #b78cff; outline-offset: 3px; }
+button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid #ff5361; outline-offset: 3px; }
 #root { min-height: 100vh; }
-::selection { color: #fff; background: #7144bb; }
+::selection { color: #fff; background: #a92734; }

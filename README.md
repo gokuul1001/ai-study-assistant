@@ -29,9 +29,9 @@ A responsive study workspace with private user accounts, a searchable notes libr
    npm run dev
    ```
 
-5. Open the local URL printed by Vite, normally `http://localhost:5173`, then register an account.
+5. On the computer, open `http://localhost:5173`. On a phone or another computer connected to the same Wi-Fi, open the **Network** URL printed by Vite (for example, `http://192.168.1.25:5173`), then register an account.
 
-The API listens on port `3001` by default. Vite proxies `/api` requests to it. User accounts and data persist across API restarts in `data/store.json`.
+The API listens on port `3001` on all network interfaces by default. Vite proxies `/api` requests to it. User accounts and data persist across API restarts in `data/store.json`. If a device still cannot connect, check that both devices are on the same non-guest Wi-Fi network and that the computer's firewall allows inbound connections to ports `5173` and `3001`.
 
 ## Production-style run
 
@@ -42,7 +42,7 @@ npm run build
 npm start
 ```
 
-Open `http://localhost:3001`. Set `NODE_ENV=production` when deploying behind HTTPS so session cookies are marked `Secure`. The local JSON store is intended for a single-instance deployment; use a managed database and a durable secret/environment configuration for a multi-instance production service.
+Open `http://localhost:3001` on the computer, or use the **Network access** URL printed by the server on another device on the same Wi-Fi. Set `NODE_ENV=production` when deploying behind HTTPS so session cookies are marked `Secure`. The local JSON store is intended for a single-instance deployment; use a managed database and a durable secret/environment configuration for a multi-instance production service.
 
 ## Checks
 

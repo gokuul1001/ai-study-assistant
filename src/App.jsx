@@ -90,9 +90,9 @@ function App() {
     api("/api/auth/me")
       .then(async ({ user: currentUser }) => {
         if (!mounted || !currentUser) return;
-        setUser(currentUser);
         restoreDraft(currentUser.id);
         await loadWorkspace();
+        setUser(currentUser);
       })
       .catch((loadError) => {
         if (loadError.message !== "Please sign in to continue.") setError(loadError.message);
@@ -137,9 +137,9 @@ function App() {
     try {
       const endpoint = authMode === "register" ? "/api/auth/register" : "/api/auth/login";
       const result = await api(endpoint, { method: "POST", body: JSON.stringify(authForm) });
-      setUser(result.user);
       restoreDraft(result.user.id);
       await loadWorkspace();
+      setUser(result.user);
     } catch (authError) {
       setError(authError.message);
     } finally {

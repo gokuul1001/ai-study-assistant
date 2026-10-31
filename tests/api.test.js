@@ -55,7 +55,8 @@ async function request(path, options = {}, cookie) {
   });
   const body = await response.json();
   const sessionCookie = response.headers.get("set-cookie")?.split(";")[0];
-  return { response, body, sessionCookie };
+  const secureCookie = response.headers.get("set-cookie")?.toLowerCase().includes("; secure") || false;
+  return { response, body, sessionCookie, secureCookie };
 }
 
 function json(method, value) {
@@ -72,6 +73,7 @@ test("account data, preferences, chat, and session are isolated and persistent",
   assert.equal(firstRegistration.body.user.name, "Taylor Student");
   const firstCookie = firstRegistration.sessionCookie;
   assert.ok(firstCookie);
+  assert.equal(firstRegistration.secureCookie, false, "HTTP development sessions must work on LAN IP addresses");
 
   const duplicate = await request("/api/auth/register", json("POST", {
     name: "Taylor Student",

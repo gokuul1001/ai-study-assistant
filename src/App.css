@@ -5,15 +5,15 @@
   --surface: #100e17;
   --surface-raised: #15121e;
   --surface-soft: #1b1725;
-  --line: #292435;
-  --line-bright: #3a304c;
-  --text: #f2effa;
-  --muted: #a49bad;
-  --dim: #777083;
-  --violet: #a779ff;
-  --violet-bright: #c1a0ff;
-  --violet-dark: #6541a3;
-  --pink: #f28dc7;
+  --line: #302326;
+  --line-bright: #583238;
+  --text: #f5f0f0;
+  --muted: #a99c9d;
+  --dim: #776a6d;
+  --violet: #ed4352;
+  --violet-bright: #ff6874;
+  --violet-dark: #9c1e2b;
+  --pink: #ff8791;
   --green: #79d8be;
   --danger: #ff9aab;
   --heading: "Space Grotesk", "DM Sans", sans-serif;
@@ -342,4 +342,94 @@ footer { display: flex; justify-content: space-between; padding: 20px 2px 4px; c
   .stat-card { min-height: 82px; }
   .stat-icon { top: 14px; right: 13px; width: 27px; height: 27px; }
   .status { display: none; }
+}
+
+.app-shell { background-image: linear-gradient(115deg, rgba(69, 17, 24, .24), transparent 42%), repeating-linear-gradient(0deg, transparent 0, transparent 38px, rgba(255, 75, 89, .018) 39px), repeating-linear-gradient(90deg, transparent 0, transparent 38px, rgba(255, 75, 89, .018) 39px); }
+.brand-icon { border-color: #9a3942; background: linear-gradient(145deg, #a32634, #48171e); box-shadow: 0 0 23px rgba(238, 56, 72, .2), inset 0 1px rgba(255,255,255,.15); }
+.nav-label, .section-index, .eyebrow { color: #a18d90; }
+.nav-item.active { color: #ffe2e4; border-color: #55262c; background: linear-gradient(100deg, rgba(164, 37, 49, .24), rgba(96, 27, 35, .1)); box-shadow: inset 2px 0 #f04452; }
+.nav-icon { color: #a37d81; }
+.nav-spark, .sidebar-note-icon { color: var(--violet); }
+.sidebar-note { border-color: #39262a; background: linear-gradient(130deg, #1d1416, #100e11); }
+.profile-avatar, .user-avatar, .account-avatar { border-color: #70363d; color: #ffe0e2; background: #32191d; }
+.breadcrumb span { color: #705357; }
+.status { border-color: #3e292c; background: #171113; }
+.status i { background: var(--violet); box-shadow: 0 0 8px rgba(240, 68, 82, .75); }
+.welcome-card { border-color: #633137; background: linear-gradient(112deg, #30171b 0%, #171114 59%, #291518 100%); }
+.welcome-card::before { background: linear-gradient(90deg, transparent 50%, rgba(196, 43, 58, .12)), repeating-linear-gradient(135deg, transparent 0 18px, rgba(255, 167, 174, .025) 19px 20px); }
+.welcome-tag, .auth-message .eyebrow { color: #ff9aa2; }
+.welcome-art { border-color: rgba(255, 126, 137, .24); background: linear-gradient(130deg, rgba(221, 51, 65, .15), rgba(221, 51, 65, .01) 60%), repeating-linear-gradient(0deg, transparent 0 16px, rgba(255, 110, 122, .08) 17px 18px), repeating-linear-gradient(90deg, transparent 0 16px, rgba(255, 110, 122, .08) 17px 18px); }
+.welcome-art span { color: #ffe1e3; text-shadow: 0 0 24px rgba(255, 81, 96, .7); }
+.welcome-art i { border-color: rgba(255, 177, 183, .45); }
+.welcome-art b { color: #c2868b; }
+.primary-btn { border-color: #e04b58; background: linear-gradient(125deg, #d33a49, #a92332); box-shadow: 0 5px 16px rgba(150, 27, 41, .24), inset 0 1px rgba(255,255,255,.13); }
+.primary-btn:hover:not(:disabled) { box-shadow: 0 8px 22px rgba(196, 42, 57, .36); }
+.stat-icon { border-color: #573036; color: #ff7882; background: #29171a; }
+.stat-icon.violet { color: #ffadb4; border-color: #573036; background: #29171a; }
+.stat-icon.coral { color: #ffb199; border-color: #5e403b; background: #2d201e; }
+.heading-icon, .ai-feature span, .empty-state > span, .search-field > span { color: #e75a66; }
+.create-panel input:focus, .create-panel textarea:focus, .auth-form input:focus, .search-input:focus, .select-input:focus, .search-field input:focus, .chat-input-wrap textarea:focus { border-color: #d54a57; box-shadow: 0 0 0 3px rgba(213, 74, 87, .13); }
+.assistant-panel { background: linear-gradient(150deg, #211618, #111012 78%); }
+.assistant-symbol { border-color: #69343a; color: #ffe0e2; background: linear-gradient(135deg, #542128, #291719); box-shadow: 0 0 17px rgba(220, 60, 74, .16); }
+.secondary-btn { border-color: #5a3338; color: #ffc2c6; background: #211517; }
+.secondary-btn:hover:not(:disabled) { border-color: #a64b55; background: #2c191d; }
+.note-card { border-color: #332528; background: linear-gradient(145deg, #191416, #121012); }
+.note-card:hover { border-color: #754148; }
+.note-label { color: #ff8a93; }
+.select-input option { background: #100e11; }
+.result-meta, .category-card small span { color: #ed727b; }
+.result-count strong, .category-card strong { color: #ffadb4; }
+.result-item { border-color: #352629; }
+.category-card { border-color: #3c292d; background: linear-gradient(140deg, #211619, #121012); }
+.category-card:hover { border-color: #c04a55; }
+.category-mark { color: #f07079; }
+.switch.on { border-color: #d44c58; background: #9f2835; }
+.account-panel { border-color: #39272b; background: #141113; }
+.chat-box { scrollbar-color: #65373d transparent; }
+.chat-welcome-icon { border-color: #713941; color: #ffe1e3; background: #32191e; box-shadow: 0 0 26px rgba(221, 56, 72, .16); }
+.suggestion-row button:hover { border-color: #a44751; }
+.suggestion-row button span, .message-sources button { color: #ff9da5; }
+.message-avatar { border-color: #69373d; color: #ffd5d8; background: #2c191c; }
+.chat-message.user .message-avatar { color: #ffc1c7; border-color: #69343a; background: #32191e; }
+.message-sources button { border-color: #573036; background: #211517; }
+.typing-indicator i { background: #f16a75; }
+.chat-input-wrap { border-color: #3e2a2e; background: #0e0c0e; }
+.send-btn { border-color: #df515d; background: #a72c38; }
+.send-btn:hover:not(:disabled) { background: #c93c49; }
+.chat-input-wrap small span { color: #e46a74; }
+.loader { border-color: #4a2d32; border-top-color: #ff6672; }
+.auth-screen { background: #0c0a0b; }
+.auth-aside { border-color: #392428; background: linear-gradient(145deg, #29171a, #120e10 60%, #1d1114); }
+.auth-aside::before { background: repeating-linear-gradient(0deg, transparent 0 48px, rgba(255, 168, 175, .035) 49px), repeating-linear-gradient(90deg, transparent 0 48px, rgba(255, 168, 175, .035) 49px); }
+.auth-orbit { border-color: rgba(231, 96, 107, .45); background: linear-gradient(135deg, rgba(206, 49, 64, .13), transparent), repeating-linear-gradient(0deg, transparent 0 18px, rgba(255, 105, 117, .07) 19px), repeating-linear-gradient(90deg, transparent 0 18px, rgba(255, 105, 117, .07) 19px); }
+.auth-orbit::before, .auth-orbit::after { border-color: rgba(247, 124, 134, .4); }
+.auth-orbit::after { border-color: rgba(255, 183, 188, .5); }
+.auth-orbit span { color: #ffe1e3; text-shadow: 0 0 18px rgba(255, 77, 93, .8); }
+.auth-form > .eyebrow { color: #d9838a; }
+.auth-switch button { color: #ff9ca4; }
+.cursor-ring { border-color: rgba(255, 122, 132, .85); box-shadow: 0 0 12px rgba(237, 67, 82, .3), inset 0 0 8px rgba(237, 67, 82, .08); }
+.cursor-core { background: #ffe0e2; box-shadow: 0 0 8px rgba(255, 119, 130, .8); }
+.cursor-aura.is-clicking .cursor-ring { border-color: #ffe0e2; box-shadow: 0 0 19px rgba(237, 67, 82, .55), inset 0 0 9px rgba(237, 67, 82, .2); }
+
+@media (max-width: 780px) {
+  .nav-list { padding-bottom: 2px; }
+}
+
+@media (max-width: 780px) {
+  .brand-icon { border-color: #9a3942; background: linear-gradient(145deg, #a32634, #48171e); }
+  .nav-item.active { color: #ffe2e4; border-color: #55262c; background: linear-gradient(100deg, rgba(164, 37, 49, .24), rgba(96, 27, 35, .1)); box-shadow: inset 2px 0 #f04452; }
+  .nav-item.active .nav-icon, .nav-spark, .sidebar-note-icon { color: #ff6874; }
+  .mobile-logout { border-color: #583238; color: #ff9aa2; background: #171113; }
+  .primary-btn { border-color: #e04b58; background: linear-gradient(125deg, #d33a49, #a92332); box-shadow: 0 5px 16px rgba(150, 27, 41, .24), inset 0 1px rgba(255,255,255,.13); }
+  .status i { background: #ed4352; box-shadow: 0 0 8px rgba(240, 68, 82, .75); }
+  .welcome-card { border-color: #633137; background: linear-gradient(112deg, #30171b 0%, #171114 59%, #291518 100%); }
+  .welcome-tag, .section-index { color: #ff9aa2; }
+  .stat-icon, .stat-icon.violet { border-color: #573036; color: #ff7882; background: #29171a; }
+  .heading-icon, .ai-feature span, .empty-state > span, .search-field > span { color: #e75a66; }
+  .category-mark, .result-meta, .category-card small span { color: #ed727b; }
+  .category-card strong, .result-count strong { color: #ffadb4; }
+  .switch.on { border-color: #d44c58; background: #9f2835; }
+  .chat-welcome-icon, .assistant-symbol { border-color: #713941; color: #ffe1e3; background: #32191e; }
+  .send-btn { border-color: #df515d; background: #a72c38; }
+  .auth-form > .eyebrow, .auth-switch button { color: #ff9ca4; }
 }
